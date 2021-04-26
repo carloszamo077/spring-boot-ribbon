@@ -1,0 +1,21 @@
+spring:
+  application:
+    # This ends up as the service name in zipkin
+    name: ${project.artifactId}
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+# lets listen on all IPs such as the pod IP
+server:
+  address: 0.0.0.0
+
+# lets use a different management port in case you need to listen to HTTP requests on 8080
+management:
+  port: 8081
+
+#Enable / Disable Ribbon Http Client
+ribbon:
+  http:
+    client:
+      enabled: true
